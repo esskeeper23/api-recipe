@@ -2,6 +2,7 @@ const { DataTypes } = require('sequelize')
 
 const db = require('../utils/database')
 const Users = require('./users.models')
+const Categories = require('./categories.models')
 
 const Recipes = db.define('recipes', {
     id: {
@@ -47,7 +48,7 @@ const Recipes = db.define('recipes', {
         field: 'category_id',
         references: {
             key: 'id',
-            model: ''
+            model: Categories
         }
     },
     origin: {
