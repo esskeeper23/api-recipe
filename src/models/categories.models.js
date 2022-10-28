@@ -17,3 +17,5 @@ const categories = db.define('categories', {
 }, {
     timestamps: false
 })
+
+module.exports = categories

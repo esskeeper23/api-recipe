@@ -17,3 +17,5 @@ const Types = db.define('types', {
 }, {
     timestamps: false
 })
+
+module.exports = Types
