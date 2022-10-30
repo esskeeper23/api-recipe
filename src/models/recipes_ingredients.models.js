@@ -23,7 +23,7 @@ const RecipesIngredients = db.define('recipes_ingredients', {
             model: Recipes
         }
     },
-    ingreientId: {
+    ingredientId: {
         type: DataTypes.UUID,
         allowNull: false,
         field: 'ingredient_id',
