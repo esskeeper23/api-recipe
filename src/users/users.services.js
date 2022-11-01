@@ -32,7 +32,7 @@ const registerUser = (req, res) => {
     phone,
     birthday,
     gender,
-    country,
+    country
   } = req.body;
 
   if (firstName && lastName && email && password && phone && birthday) {
@@ -46,7 +46,7 @@ const registerUser = (req, res) => {
         phone,
         birthday,
         gender,
-        country,
+        country
       })
       .then((data) => {
         res.status(201).json(data);
