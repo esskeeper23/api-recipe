@@ -17,7 +17,7 @@ const getRecipeById = async (id) => {
 
 
 const createRecipe = async (data) => {
-    const data = await Recipes.create({
+    const response = await Recipes.create({
         id: uuid.v4(),
         title: data.title,
         description: data.description,
@@ -29,6 +29,7 @@ const createRecipe = async (data) => {
         origin: data.origin,
         likes: data.likes
     })
+    return response
 }
 
 const updateRecipe = async (id, data) => {
