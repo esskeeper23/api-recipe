@@ -1,7 +1,5 @@
 const router = require('express').Router()
-
 const passport = require('passport')
-const { route, get } = require('../categories/categories.router')
 const adminValidate = require('../middlewares/role.middleware')
 const typeServices = require('./types.services')
 

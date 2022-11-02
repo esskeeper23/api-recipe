@@ -11,17 +11,18 @@ const getAllTypes = (req, res) => {
 }
 
 const getTypeById = (req, res) => {
+    const id = req.params.id
     typeControllers.getTypeById(id)
-    .then(data => {
-        if (data) {
-            res.status(200).json(data)
-        } else {
-            res.status(400).json({message: `ID: ${id}, not exists`})
-        }
-    })
-    .catch(err => {
-        res.status(400).json({message: err.message})
-    })
+        .then(data => {
+            if (data) {
+                res.status(200).json(data)
+            } else {
+                res.status(400).json({message: `ID: ${id}, not exists`})
+            }
+        })
+        .catch(err => {
+            res.status(400).json({message: err.message})
+        })
 }
 
 const postType = (req, res) => {
