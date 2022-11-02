@@ -61,6 +61,8 @@ const Users = db.define("users", {
     field: 'is_verified',
     defaultValue: false
   },
+},{
+  timestamps: false
 });
 
 module.exports = Users
