@@ -26,8 +26,7 @@ router.route('/:ingredient_id')
         ingredientServices.deleteIngredient
     )
 
+router.route('/:')
+
 
 module.exports = router
-
-
-adminValidate

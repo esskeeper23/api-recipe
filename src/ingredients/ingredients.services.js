@@ -81,11 +81,36 @@ const deleteIngredient = (req, res) => {
         })
 }
 
+const postIngredientToUser = (req, res) => {
+    const userId = req.user.id
+    const { amount } = req.body
+    const IngredientId = req.param.ingredient_id
+
+    if (amount) {
+        ingredientControllers.addIngredientToUser({userId, IngredientId, amount})
+            .then((data) => {
+                res.status(201).json(data)
+            })
+            .catch((err) => {
+                res.status(400).json({message: err.message})
+            })
+    } else {
+        res.status(400).json({
+            message: 'Missing Data',
+            fields: {
+                amount: 'string'
+            }
+        })
+
+    }
+}
+
 
 module.exports = {
     getAllIngredients,
     getIngedrientById,
     postIngredient,
     deleteIngredient,
-    patchIngredient
+    patchIngredient,
+    postIngredientToUser
 }
