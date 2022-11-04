@@ -20,13 +20,23 @@ router.route('/')
 
 router.route('/:ingredient_id')
     .get(ingredientServices.getIngedrientById)
+    .patch(
+        passport.authenticate('jwt', {session: false}),
+        adminValidate,
+        ingredientServices.patchIngredient
+    )
     .delete(
         passport.authenticate('jwt', {session: false}),
         adminValidate,
         ingredientServices.deleteIngredient
     )
+    
 
-router.route('/:')
+router.post('/:ingredient_id/add_to_user', 
+    passport.authenticate('jwt', {session: false}),
+    ingredientServices.postIngredientToUser
+)
+
 
 
 module.exports = router

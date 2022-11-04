@@ -13,8 +13,7 @@ const Ingredients = db.define('ingredients', {
         type: DataTypes.STRING,
         allowNull:false,
         unique: true
-    }, //? holaGrupoComoEstan -> Javascript
-       //? hola_gripo_como_estan -> SQL
+    },
     typeId: {
         type: DataTypes.INTEGER,
         allowNull: false,

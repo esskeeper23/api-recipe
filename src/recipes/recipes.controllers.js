@@ -111,13 +111,14 @@ const deleteRecipe = async (id) => {
 }
 
 const getMyRecipes = async(userId) => {
-    const userIngredients = await UsersIngredients.findAll({
+    const userIngredients = await UserIngredients.findAll({
         attributes: ['ingredientId'],
         where: {
             userId
         }
     })
     const filteredIngredients = userIngredients.map(obj => obj.ingredientId)
+    
     const recipeIngredients = await RecipeIngredients.findAll({
         where: {
             ingredientId: {
@@ -145,5 +146,6 @@ module.exports = {
     getRecipeById,
     createRecipe,
     updateRecipe,
-    deleteRecipe
+    deleteRecipe,
+    getMyRecipes
 }

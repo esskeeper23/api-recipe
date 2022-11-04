@@ -12,7 +12,10 @@ const Recipes = db.define('recipes', {
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            min: 5
+        }
     },
     description: {
         type: DataTypes.TEXT,
