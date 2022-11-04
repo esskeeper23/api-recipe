@@ -7,7 +7,6 @@ const db = require('./utils/database')
 
 //? Files
 const {port} = require('./config');
-const swaggerDoc = require('')
 //* Routes
 const userRouter = require('./users/users.router')
 const authRouter = require('./auth/auth.router')
