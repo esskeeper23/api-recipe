@@ -26,7 +26,7 @@ const getRecipeById = (req, res) => {
 }
 
 const createRecipe = (req, res) => {
-    const userId = req.user.is
+    const userId = req.user.id
     const { title, description, urlImg, time, portions, categoryId, origin} = req.body
 
     if ( title && description && time && portions && categoryId ) {
