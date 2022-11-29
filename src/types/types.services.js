@@ -29,7 +29,7 @@ const postType = (req, res) => {
     const { name } = req.body
 
     if (name) {
-        typeControllers.createCategory(name)
+        typeControllers.createType(name)
             .then(data => {
                 res.status(201).json(data)
             })
